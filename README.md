@@ -225,12 +225,13 @@ See [`evaluation/README.md`](evaluation/README.md) for detailed folder structure
 
 **ISPASS 2026**  
 *LLMServingSim 2.0: A Unified Simulator for Heterogeneous and Disaggregated LLM Serving Infrastructure*  
-Jaehong Cho<sup>\*</sup>, Hyunmin Choi<sup>\*</sup>, Guseul Heo, Jongse Park (KAIST) [[Paper]]() (To Appear)                                                                                                                                                       
-<sup>\*</sup>Equal contribution                                                                                                                                                                                                                
+Jaehong Cho<sup>\*</sup>, Hyunmin Choi<sup>\*</sup>, Guseul Heo, Jongse Park (KAIST) [[Paper]]() (To Appear)  
+<sup>\*</sup>Equal contribution  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18879965.svg)](https://doi.org/10.5281/zenodo.18879965)
 
 **CAL 2025**  
 *LLMServingSim2.0: A Unified Simulator for Heterogeneous Hardware and Serving Techniques in LLM Infrastructure*  
-Jaehong Cho, Hyunmin Choi, Guseul Heo, Jongse Park (KAIST)  [[Paper]](https://doi.org/10.1109/LCA.2025.3628325)
+Jaehong Cho, Hyunmin Choi, Jongse Park (KAIST)  [[Paper]](https://doi.org/10.1109/LCA.2025.3628325)
 
 **IISWC 2024**  
 *LLMServingSim: A HW/SW Co-Simulation Infrastructure for LLM Inference Serving at Scale*  
