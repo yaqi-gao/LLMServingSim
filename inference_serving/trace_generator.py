@@ -136,7 +136,7 @@ def _synthesize_trace(hardware, model, config, npu_num, npu_group, pd_type, node
     n_embd = config['hidden_size']
     n_head = config['num_attention_heads']
     kv_head = config.get('num_key_value_heads', n_head)
-    head_dim = n_embd // n_head
+    head_dim = config.get('head_dim', n_embd // n_head)
     npus_per_group = npu_num // npu_group
 
     if not enable_attn_prediction:
@@ -545,7 +545,7 @@ def _synthesize_interleaved_trace(hardware, model, config, npu_num, npu_group, p
     n_embd = config['hidden_size']
     n_head = config['num_attention_heads']
     kv_head = config.get('num_key_value_heads', n_head)
-    head_dim = n_embd // n_head
+    head_dim = config.get('head_dim', n_embd // n_head)
     npus_per_group = npu_num // npu_group
 
     # Use cached performance DB instead of reading CSV every time
@@ -2300,7 +2300,7 @@ def _build_attn_feature_row(
     n_embd = config["hidden_size"]
     n_head = config["num_attention_heads"]
     kv_head = config.get("num_key_value_heads", n_head)
-    head_dim = n_embd // n_head
+    head_dim = config.get("head_dim", n_embd // n_head)
 
     tensor_parallel_degree = npus_per_group
     num_heads_per_shard = n_head // tensor_parallel_degree

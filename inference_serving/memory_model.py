@@ -34,7 +34,7 @@ class MemoryModel():
         self.n_embd = self.config['hidden_size']
         self.n_layer = self.config['num_hidden_layers']
         self.n_head = self.config['num_attention_heads']
-        self.head_dim = self.n_embd // self.n_head
+        self.head_dim = self.config.get('head_dim', self.n_embd // self.n_head)
         self.kv_head = self.config.get("num_key_value_heads", self.n_head)  # fallback to n_head if not defined
         self.group = self.n_head // self.kv_head  # group size
         self.kv_dim = self.n_embd // self.group   # equivalent to: kv_head * (n_embd // n_head)
@@ -545,7 +545,7 @@ def calculate_sizes(model, layer_name, length, kv_len=None, pim=False, tp=1, fp=
     config = get_config(model)
     n_embd = config['hidden_size']
     n_head = config['num_attention_heads']
-    head_dim = n_embd // n_head
+    head_dim = config.get('head_dim', n_embd // n_head)
     vocab_size = config['vocab_size']
     kv_head = config.get("num_key_value_heads", n_head)  # fallback to n_head if not defined
     group = n_head // kv_head  # group size for GQA

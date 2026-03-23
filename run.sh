@@ -18,10 +18,16 @@ python main.py --cluster-config 'cluster_config/single_node_pd_instance.json' \
     --dataset 'dataset/example_trace.jsonl' --output 'output/example_pd_run.csv' \
     --num-req 10
 
-# MoE example
+# MoE example (Phi-mini-MoE)
 python main.py --cluster-config 'cluster_config/single_node_moe_single_instance.json' \
     --fp 16 --block-size 16 \
     --dataset 'dataset/example_trace.jsonl' --output 'output/example_moe_run.csv' \
+    --num-req 10
+
+# GPT-OSS-20B MoE example (32 experts, top-4, H100)
+python main.py --cluster-config 'cluster_config/single_node_gpt_oss_moe_single_instance.json' \
+    --fp 16 --block-size 16 \
+    --dataset 'dataset/example_trace.jsonl' --output 'output/example_gpt_oss_moe_run.csv' \
     --num-req 10
 
 # Prefix caching example
